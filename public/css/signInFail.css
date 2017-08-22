@@ -21,22 +21,12 @@ body{
   margin: auto;
 }
 .fail{
-  width: 100%;
-  height: 100px;
-  margin: 100px auto 40px;
-  color:#9DCFAF;
+  color:#f9ad2c;
 }
-.click{
-  width:100%;
-  height: 100px;
-  line-height: 100px;
-  margin: 0 auto;
-  padding: 20px 40px;
-  color:#9DCFAF;
-  border: 1px solid #9DCFAF;
+.click{ 
+  color:#1A1B1B;
   background: #FAFAFA;
 }
 .click:hover{
-  color:#FAFAFA;
-  background: #9DCFAF;
+  color:#f9ad2c;
 }
