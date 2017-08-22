@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>首页</title>
+
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/upload.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <!-- <div class="head">
+        <div class="top">
+            <div class="top_content">
+                欢迎来到凌睿工作室组队系统！
+            </div>
+            <div class="top_link">
+                退出
+            </div>
+        </div>
+    </div>
+    <div class="left">
+        <dl>
+            <dd>
+                <ul class="menu">
+                    <li><a href="" class="menuItem">个人资料</a></li>
+                    <li><a href="" class="menuItem">队伍列表</a></li>
+                    <li><a href="" class="menuItem">我的队伍</a></li>
+                    <li><a href="" class="menuItem">发布队伍</a></li>
+                </ul>
+            </dd>
+        </dl>
+
+    </div>
+    <div class="right"></div> -->
+
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-md-12 column">
+                <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> 
+                            <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>                       
+                        
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a href="#">我的资料</a>
+                            </li>
+                            <li>
+                                <a href="#">队伍列表</a>
+                            </li>
+                            <li>
+                                <a href="#">我的队伍</a>
+                            </li>
+                            <li class="active">
+                                <a href="#">发布队伍</a>
+                            </li>
+                            <li>
+                                    <a href="#">退出</a>
+                                </li>
+                        </ul>
+                    </div>
+
+                </nav>
+                <form role="form" action="" method="post" enctype="multipart/form-data" id="myForm" style="margin-top:55px;">
+                    <div class="container">
+                            <div class="row">
+                                <div class="col-md-8 col-md-offset-2">
+                                    <div class="panel panel-info">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">发布队伍</h3>
+                                        </div>
+                                        <div class="panel-body">
+                                
+                                            <div class="form-group">
+                                                </br>
+                                                <label for="title">队伍名称</label>
+                                                <input type="text" class="form-control" id="name" placeholder="请输入队伍名称" >
+                                                </br>
+                                                <label for="title">队伍详情</label>
+                                                <textarea class="form-control" rows="3" name="body" placeholder="请输入队伍详情"></textarea>
+                                                </br>
+                                                <label for="title">队长名字</label>
+                                                <input type="text" class="form-control" id="captainName" placeholder="请输入队长名字">
+                                                </br>
+                                                <label for="title">队长qq</label>
+                                                <input type="text" class="form-control" id="qqNumber" placeholder="请输入队长qq">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12" style="text-align:center;">
+                            <button type="submit" class="btn btn-primary">发布</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <button type="button" class="btn btn-default" onclick="javascript:history.back();">取消</button>
+                        </div>
+                        </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

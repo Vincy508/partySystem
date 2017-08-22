@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>个人主页</title>
+        <link href="css/answerPage.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="reply.js"></script>
+    </head>
+    <body>
+        <div id="header">
+            <div class="logo">
+                <img src="picture/logo.jpg" alt="logo"/>
+            </div>
+
+            <div class="user">
+                <img src="picture/face.jpg" alt="face"/>
+            </div>
+        </div>
+
+        <div id="main">
+
+            <div id="left">
+                <div class="title">凌睿工作室答题系统</div>
+                <ul>
+                    <li class="item"><a href="/personalHomePage">首页</a></li>
+                    <li class="item"><a href="/questionList">题目列表</a></li>
+                    <li class="item"><a href="/publishPage">题目发布</a></li>
+                </ul>
+            </div>
+
+            <div id="right">
+                <div id="userimformation">
+                    <div class="uiheader"></div>
+                    <div class="uimain">
+                        <!--<div class="questionnumber">第1题</div>-->
+                        <div id="description" class="questioncontent"></div>
+
+                        <form action="/answerPage/answerAskQuestion" method="post">
+                            <textarea name="answer" class="replyzone"></textarea>
+
+                            <div class="uifooter">
+                                <button type="submit" class="submit" name="submit" value="submit">提交</button>
+                                <!--<div class="next"><a href="">下一题</a></div><-->
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </body>
+    <script type="text/javascript" src="javascripts/publishPage.js"></script>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../public/css/signPage.css">
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>SignIn</title>
+	<script>
+		function tran1() {
+			var oWrap1 = document.getElementById('wrap1'),
+				oWrap2 = document.getElementById('wrap2');
+
+			oWrap1.style.display = 'none';
+			oWrap2.style.display = 'block';
+		}
+		function tran2() {
+			var oWrap1 = document.getElementById('wrap1'),
+				oWrap2 = document.getElementById('wrap2');
+
+			oWrap1.style.display = 'block';
+			oWrap2.style.display = 'none';
+		}
+	</script>
+	<style>
+		input::-webkit-input-placeholder {
+			color: #999;
+			margin-left: 3px;
+			-webkit-transition: color.5s;
+		}
+
+		input:focus::-webkit-input-placeholder,
+		input:hover::-webkit-input-placeholder {
+			color: #c2c2c2;
+			-webkit-transition: color.5s;
+		}
+	</style>
+</head>
+
+<body>
+	<div style="z-index:-10;position:absolute;width:100%;height:100%;">
+		<img src="../public/picture/backImage1.png" width="100%" height="100%">
+	</div>
+	<div id="wrap1" class="wrap" style="width:20%;height:20%;    margin-right: 15%;margin-top: 18%;">
+		<div class="container">
+			<span class="header" style="text-align:center;color:#575757;">用户登录</span>
+			<form name="form" method="post" action="/signPage/signIn">
+				<input type="text" required="required" name="username" placeholder="用户名/邮箱"></input>
+				<input type="password" required="required" name="password" placeholder="密码"></input>
+				<input type="submit" class="button" name="submit" value="登录"></input>
+				<footer><a class="forget" href="">找回密码</a>&nbsp;&nbsp;<a onclick="tran1();">立即注册</a></footer>
+			</form>
+		</div>
+	</div>
+	<div id="wrap2" class="wrap" style="display:none">
+		<div class="container">
+			<span class="header" style="text-align:center;color:#575757;">注册账号</span>
+			<form name="form" method="post" action="/signPage/signUp">
+				<input type="text" required="required" name="username" placeholder="*用户名"></input>
+				<input type="password" required="required" name="password" placeholder="*密码"></input>
+				<input type="password" required="required" name="repassword" placeholder="*确认密码"></input>
+				<input type="text" name="mail" placeholder="邮箱"></input>
+				<input class="button" type="submit" value="注册"></input>
+				<footer>
+					<span>*为必填项</span>
+					<a onclick="tran2();">已有账号</a>
+				</footer>
+			</form>
+		</div>
+	</div>
+
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>发布队伍</title>
+
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/upload.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+    <form action="" method="post" enctype="multipart/form-data" id="myForm">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">发布队伍</h3>
+                        </div>
+                        <div class="panel-body">
+                
+                            <div class="form-group">
+                                </br>
+                                <label for="title">队伍名称</label>
+                                <input type="text" class="form-control" id="name" placeholder="请输入队伍名称" >
+                                </br>
+                                <label for="title">队伍详情</label>
+                                <textarea class="form-control" rows="3" name="body" placeholder="请输入队伍详情"></textarea>
+                                </br>
+                                <label for="title">队长名字</label>
+                                <input type="text" class="form-control" id="captainName" placeholder="请输入队长名字">
+                                </br>
+                                <label for="title">队长qq</label>
+                                <input type="text" class="form-control" id="qqNumber" placeholder="请输入队长qq">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12" style="text-align:center;">
+            <button type="submit" class="btn btn-primary">发布</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button type="button" class="btn btn-default" onclick="javascript:history.back();">取消</button>
+        </div>
+        </div>
+    </form>
+    <!-- JavaScript 放置在文档最后面可以使页面加载速度更快 -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/upload.js"></script>
+    <script src="bootstrap/js/select.js"></script>
+    <link href="video.js/css/video-js.css" rel="stylesheet" type="text/css">
+    <script>
+        videojs.options.flash.swf = "video-js.swf";
+    </script>
+
+</body>
+
+</html>
