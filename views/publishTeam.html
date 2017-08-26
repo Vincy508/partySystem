@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <title>首页</title>
+    <title>发布队伍</title>
 
     <!-- Bootstrap -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -22,31 +22,6 @@
 </head>
 
 <body>
-    <!-- <div class="head">
-        <div class="top">
-            <div class="top_content">
-                欢迎来到凌睿工作室组队系统！
-            </div>
-            <div class="top_link">
-                退出
-            </div>
-        </div>
-    </div>
-    <div class="left">
-        <dl>
-            <dd>
-                <ul class="menu">
-                    <li><a href="" class="menuItem">个人资料</a></li>
-                    <li><a href="" class="menuItem">队伍列表</a></li>
-                    <li><a href="" class="menuItem">我的队伍</a></li>
-                    <li><a href="" class="menuItem">发布队伍</a></li>
-                </ul>
-            </dd>
-        </dl>
-
-    </div>
-    <div class="right"></div> -->
-
     <div class="container">
         <div class="row clearfix">
             <div class="col-md-12 column">
@@ -54,11 +29,10 @@
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> 
                             <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>                       
-                        
                     </div>
-
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav">
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="
+                    background-color: #e46363;">
+                            <ul class="nav navbar-nav">
                             <li>
                                 <a href="#">我的资料</a>
                             </li>
@@ -71,14 +45,10 @@
                             <li class="active">
                                 <a href="#">发布队伍</a>
                             </li>
-                            <li>
-                                    <a href="#">退出</a>
-                                </li>
                         </ul>
                     </div>
-
                 </nav>
-                <form role="form" action="" method="post" enctype="multipart/form-data" id="myForm" style="margin-top:55px;">
+                <form role="form" action="" method="post" enctype="multipart/form-data" id="myForm" style="margin-top:100px;">
                     <div class="container">
                             <div class="row">
                                 <div class="col-md-8 col-md-offset-2">
@@ -108,7 +78,7 @@
                             </div>
                         </div>
                         <div class="col-md-12" style="text-align:center;">
-                            <button type="submit" class="btn btn-primary">发布</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <button type="submit" class="btn btn-danger">发布</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <button type="button" class="btn btn-default" onclick="javascript:history.back();">取消</button>
                         </div>
                         </div>
@@ -117,5 +87,4 @@
         </div>
     </div>
 </body>
-
 </html>
