@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <title>发布队伍</title>
+    <title>我的队伍</title>
 
     <!-- Bootstrap -->
     <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -39,10 +39,10 @@
                             <li>
                                 <a href="#">队伍列表</a>
                             </li>
-                            <li>
+                            <li class="active">
                                 <a href="#">我的队伍</a>
                             </li>
-                            <li class="active">
+                            <li>
                                 <a href="#">发布队伍</a>
                             </li>
                         </ul>
@@ -54,11 +54,12 @@
                                 <div class="col-md-8 col-md-offset-2">
                                     <div class="panel panel-info">
                                         <div class="panel-heading">
-                                            <h3 class="panel-title">发布队伍</h3>
+                                            <h3 class="panel-title">您是队长</h3>
                                         </div>
                                         <div class="panel-body">
                                 
                                             <div class="form-group">
+                                                <button type="button" class="btn btn-default">申请列表</button>
                                                 </br>
                                                 <label for="title">队伍名称</label>
                                                 <input type="text" class="form-control" id="name" placeholder="请输入队伍名称" >
@@ -71,14 +72,19 @@
                                                 </br>
                                                 <label for="title">队长qq</label>
                                                 <input type="text" class="form-control" id="qqNumber" placeholder="请输入队长qq">
+                                                </br>
+                                                <div class="member">
+                                                   队员：
+                                                </div>
                                             </div>
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-12" style="text-align:center;">
-                            <button type="submit" class="btn btn-danger">发布</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <button type="submit" class="btn btn-danger">修改</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <button type="button" class="btn btn-default" onclick="javascript:history.back();">取消</button>
                         </div>
                         </div>
