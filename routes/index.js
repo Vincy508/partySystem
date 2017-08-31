@@ -3,12 +3,9 @@ module.exports = initRoutes;
 function initRoutes(app,directory){
     let fs = require('fs');
 
-    var match1 = new RegExp('css');
-    var match2 = new RegExp('javascripts');
-    var match3 = new RegExp('picture');
-
     app.use(function (req,res,next){
-        if(0)
+        if(req.path==='/myInformation'||
+            req.path==='/')
         {
             if(isSignIn(req)){
                 next();
@@ -31,11 +28,15 @@ function initRoutes(app,directory){
     });
 
     app.get('/',function(req,res){
-        res.sendFile(directory + '/views/personalHomePage.html');
+        res.sendFile(directory + '/views/myInformation.html');
     });
 
     app.get('/css/:file',function(req,res){
         res.sendFile(directory + '/public/css/' + req.params['file']);
+    });
+
+    app.get('/bootstrap/css/:file',function(req,res){
+        res.sendFile(directory + '/bootstrap/css/' + req.params['file']);
     });
 
     app.get('/javascripts/:file',function(req,res){
@@ -47,7 +48,7 @@ function initRoutes(app,directory){
     });
 
     require('./signPage')(app,directory);
-    require('./personalHomePage')(app,directory);
+    require('./myInformation')(app,directory);
     require('./questionList')(app,directory);
     require('./questionDetail')(app,directory);
     require('./answerPage')(app,directory);

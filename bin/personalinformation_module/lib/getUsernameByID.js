@@ -4,11 +4,11 @@ const saferman = require('saferman');
 
 function getUsernameByID(ID,callback){
 
-    let sql = 'SELECT Name FROM PersonalInformation WHERE ID=' + ID;
+    let sql = 'SELECT Name,QQ FROM PersonalInformation WHERE ID=' + ID;
 
     saferman.sql(sql,function(results){
         if(results.length){
-            executeCallback(results[0].Name);
+            executeCallback(results[0]);
         }else{
             executeCallback(null);
         }

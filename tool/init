@@ -19,7 +19,8 @@ USE PartySystem;
 CREATE TABLE PersonalInformation(
      ID INT AUTO_INCREMENT primary key,
      Name VARCHAR(20),
-     PhoneNumber INT
+     RealName VARCHAR(20),
+     QQ INT
    );
 
 CREATE TABLE ShadowTable(
