@@ -10,7 +10,6 @@ initRoutes(app,directory);
 
 
 const server = app.listen(8080,function(){
-    console.log(`Worker ${process.pid} start`);
     process.title = 'node_worker';
 });
 
