@@ -34,21 +34,21 @@
                     background-color: #e46363;">
                             <ul class="nav navbar-nav">
                             <li class="active"> 
-                                <a href="#">我的资料</a>
+                                <a href="/myInformation">我的资料</a>
                             </li>
                             <li>
-                                <a href="#">队伍列表</a>
+                                <a href="/teamList">队伍列表</a>
                             </li>
                             <li>
-                                <a href="#">我的队伍</a>
+                                <a href="/myTeam">我的队伍</a>
                             </li>
                             <li>
-                                <a href="#">发布队伍</a>
+                                <a href="/publishTeam">发布队伍</a>
                             </li>
                         </ul>
                     </div>
                 </nav>
-                <form action="/myInformation/postMyInformation" method="post" enctype="multipart/form-data" id="myForm" style="margin-top:100px;">
+                <form action="/myInformation/postMyInformation" method="post" id="myForm" style="margin-top:100px;">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-6 col-md-offset-3">
@@ -70,7 +70,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12" style="text-align:center;">
-                            <button type="submit" class="btn btn-danger">保存</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <button type="submit" value="submit" class="btn btn-danger">保存</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                              <button type="button" class="btn btn-default" onclick="javascript:history.back();">取消</button> 
                         </div>
                     </div>
@@ -79,4 +79,5 @@
         </div>
     </div>
 </body>
+<script type="text/javascript" src="javascripts/myInformation.js"></script>
 </html>

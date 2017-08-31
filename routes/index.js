@@ -49,11 +49,6 @@ function initRoutes(app,directory){
 
     require('./signPage')(app,directory);
     require('./myInformation')(app,directory);
-    require('./questionList')(app,directory);
-    require('./questionDetail')(app,directory);
-    require('./answerPage')(app,directory);
-    require('./publishPage')(app,directory);
-    require('./answerDetail')(app,directory);
-    require('./answerList')(app,directory);
+    require('./publishTeam')(app,directory);
     require('./jumpPage')(app,directory);
 }

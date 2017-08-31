@@ -11,9 +11,9 @@ function init(app,directory){
         let ID = getUserID();
         let dataToSended = {};
 
-        personalinformation_module.getUsernameByID(ID,function(result){
-            dataToSended.username = result.Name;
-            dataToSended.qq = result.QQ;
+        personalinformation_module.getInformation(ID,function(result){
+            dataToSended.RealName = result.RealName;
+            dataToSended.QQ = result.QQ;
             res.send(JSON.stringify(dataToSended));
         });
 
@@ -26,10 +26,6 @@ function init(app,directory){
         var userID = getUserID();
         var realName = req.body.username;
         var qq = req.body.qq;
-        console.log(req.body);
-        console.log(userID);
-        console.log(realName);
-        console.log(qq);
 
         personalinformation_module.updateInformation(userID,realName,qq,function (){
             res.redirect('/signInSuccess');

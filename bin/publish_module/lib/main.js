@@ -1,1 +1,1 @@
-exports.publishAskQuestion = require('./publishAskQuestion.js');
+exports.publishTeamInformation = require('./publishTeamInformation.js');

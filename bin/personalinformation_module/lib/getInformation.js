@@ -1,10 +1,10 @@
-module.exports = getUsernameByID;
+module.exports = getInformation;
 
 const saferman = require('saferman');
 
-function getUsernameByID(ID,callback){
+function getInformation(ID,callback){
 
-    let sql = 'SELECT Name,QQ FROM PersonalInformation WHERE ID=' + ID;
+    let sql = 'SELECT RealName,QQ FROM PersonalInformation WHERE ID=' + ID;
 
     saferman.sql(sql,function(results){
         if(results.length){

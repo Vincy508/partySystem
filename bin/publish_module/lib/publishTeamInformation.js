@@ -1,12 +1,13 @@
-module.exports = publishAskQuestion;
+module.exports = publishTeamInformation;
 
 const saferman = require('saferman');
+const personalinformation_module = require('../../personalinformation_module');
 
-function publishAskQuestion(title,description,total_score,authorID,callback){
+function publishTeamInformation(title,description,leaderID,callback){
 
     let isTitleDuplicate = new Promise((resolve,reject) => {
         let sql = saferman.format(
-            'SELECT ID FROM AskQuestionTable WHERE title=?',
+            'SELECT ID FROM TeamList WHERE title=?',
             [title]);
 
         saferman.sql(sql,function(results){
@@ -25,12 +26,13 @@ function publishAskQuestion(title,description,total_score,authorID,callback){
 
 
     function titleNotDuplicate(){
+        personalinformation_module.getInformation(leaderID,function(result){
+            let sql = saferman.format(
+                'INSERT INTO TeamList (ID,title,description,leaderName,leaderQQ,leaderID) VALUE (null,?,?,?,?,?)',
+                [title,description,result.RealName,result.QQ,leaderID]);
 
-        let sql = saferman.format(
-            'INSERT INTO AskQuestionTable (ID,title,description,total_score,time,authorID) VALUE (null,?,?,?,?,?)',
-            [title,description,total_score,0,authorID]);
-
-        saferman.sql(sql,executeCallback);
+            saferman.sql(sql,executeCallback);
+        });
     };
 
     function titleDuplicate(){

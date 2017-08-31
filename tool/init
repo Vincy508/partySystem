@@ -28,28 +28,19 @@ CREATE TABLE ShadowTable(
      Shadow VARCHAR(20) not null
    );
 
-CREATE TABLE RightsTable(
-     ID INT AUTO_INCREMENT primary key,
-     Rights VARCHAR(50)
-   );
-
-CREATE TABLE AskQuestionTable(
+CREATE TABLE TeamList(
      ID INT AUTO_INCREMENT primary key,
      title VARCHAR(200) not null,
      description VARCHAR(1000) not null,
-     total_score INT,
-     time VARCHAR(20),
-     authorID INT
+     leaderName VARCHAR(20),
+     leaderQQ INT,
+     leaderID INT
    );
 
-CREATE TABLE AnswerTable(
+CREATE TABLE MemberList(
      ID INT AUTO_INCREMENT primary key,
-     questionID INT not null,
+     teamID INT not null,
      userID INT not null,
-     answer VARCHAR(1000) not null,
-     Username VARCHAR(20),
-     Graph INT,
-     score INT,
-     state INT
+     Username VARCHAR(20)
    );
 eof
