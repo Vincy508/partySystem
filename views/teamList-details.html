@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <title>队伍列表</title>
+    <title>队伍列表-单个队伍详情</title>
 
     <!-- Bootstrap -->
     <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -54,11 +54,41 @@
                             <div class="col-md-8 col-md-offset-2">
                                 <div class="panel panel-info">
                                     <div class="panel-heading">
-                                        <h3 class="panel-title">队伍列表</h3>
+                                        <h3 class="panel-title">队伍名字一</h3>
                                     </div>
                                     <div class="panel-body">
+                                        </br>
+                                        <label for="title">队伍名称</label>
+                                        <input type="text" class="form-control" id="name" placeholder="请输入队伍名称" >
+                                        </br>
+                                        <label for="title">队伍详情</label>
+                                        <textarea class="form-control" rows="3" name="body" placeholder="请输入队伍详情"></textarea>
+                                        </br>
+                                        <label for="title">队长名字</label>
+                                        <input type="text" class="form-control" id="captainName" placeholder="请输入队长名字">
+                                        </br>
+                                        <label for="title">队长qq</label>
+                                        <input type="text" class="form-control" id="qqNumber" placeholder="请输入队长qq">
+                                        </br>
                                         <table id="teamTable">
-                                            
+                                            <tr>
+                                                <td>
+                                                    队员一：
+                                                </td>
+                                                <td>名字</td>
+                                            </tr>
+                                            <tr>
+                                                    <td>
+                                                        队员二：
+                                                    </td>
+                                                    <td>名字</td>
+                                                </tr>
+                                                <tr>
+                                                        <td>
+                                                            队员三：
+                                                        </td>
+                                                        <td>名字</td>
+                                                    </tr>
                                         </table>
                                     </div>
                                 </div>
@@ -73,4 +103,5 @@
     </div>
 </body>
 <script type="text/javascript" src="../public/javascripts/teamList.js"></script>
+
 </html>

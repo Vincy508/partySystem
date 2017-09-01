@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #FAFAFA;
+  font-family: 微软雅黑;
+  text-align: center;
+}
+#wrap {
+  width: 30%;
+  min-width: 300px;
+  margin: auto;
+}
+.load{
+  color:#1A1B1C;
+}
+.click{
+  color:#232222;
+  background: #FAFAFA;
+}
+.click:hover{
+  color:#f51022;
+}
