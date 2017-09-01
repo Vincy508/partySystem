@@ -48,7 +48,7 @@
                         </ul>
                     </div>
                 </nav>
-                <form role="form" action="" method="post" enctype="multipart/form-data" id="myForm" style="margin-top:100px;">
+                <form role="form" action="/publishTeam/publishTeamInformation" method="post" id="myForm" style="margin-top:100px;">
                     <div class="container">
                             <div class="row">
                                 <div class="col-md-8 col-md-offset-2">
@@ -61,16 +61,10 @@
                                             <div class="form-group">
                                                 </br>
                                                 <label for="title">队伍名称</label>
-                                                <input type="text" class="form-control" id="name" placeholder="请输入队伍名称" >
+                                                <input type="text" class="form-control" id="name" name="title" placeholder="请输入队伍名称" >
                                                 </br>
                                                 <label for="title">队伍详情</label>
-                                                <textarea class="form-control" rows="3" name="body" placeholder="请输入队伍详情"></textarea>
-                                                </br>
-                                                <label for="title">队长名字</label>
-                                                <input type="text" class="form-control" id="captainName" placeholder="请输入队长名字">
-                                                </br>
-                                                <label for="title">队长qq</label>
-                                                <input type="text" class="form-control" id="qqNumber" placeholder="请输入队长qq">
+                                                <textarea class="form-control" rows="3" name="description" placeholder="请输入队伍详情"></textarea>
                                             </div>
                                         </div>
                                     </div>

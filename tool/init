@@ -1,0 +1,46 @@
+#!/bin/bash
+
+mysql --user=root --password=879574764 << eof
+
+#delete PartySystem database
+
+DROP DATABASE PartySystem;
+
+eof
+
+mysql --user=root --password=879574764 << eof
+
+#init PartySystem database
+
+CREATE DATABASE PartySystem;
+
+USE PartySystem;
+
+CREATE TABLE PersonalInformation(
+     ID INT AUTO_INCREMENT primary key,
+     Name VARCHAR(20),
+     RealName VARCHAR(20),
+     QQ INT
+   );
+
+CREATE TABLE ShadowTable(
+     ID INT AUTO_INCREMENT primary key,
+     Shadow VARCHAR(20) not null
+   );
+
+CREATE TABLE TeamList(
+     ID INT AUTO_INCREMENT primary key,
+     title VARCHAR(200) not null,
+     description VARCHAR(1000) not null,
+     leaderName VARCHAR(20),
+     leaderQQ INT,
+     leaderID INT
+   );
+
+CREATE TABLE MemberList(
+     ID INT AUTO_INCREMENT primary key,
+     teamID INT not null,
+     userID INT not null,
+     Username VARCHAR(20)
+   );
+eof
