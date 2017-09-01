@@ -1,4 +1,4 @@
-exports.getQuestionList = require('./getQuestionList.js');
+exports.getTeamList = require('./getTeamList.js');
 
 exports.getAnswerList = require('./getAnswerList.js');
 
