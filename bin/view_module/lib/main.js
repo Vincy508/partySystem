@@ -1,9 +1,5 @@
 exports.getTeamList = require('./getTeamList.js');
 
-exports.getAnswerList = require('./getAnswerList.js');
+exports.getTeamDetail = require('./getTeamDetail.js');
 
-exports.getQuestionDetail = require('./getQuestionDetail.js');
-
-exports.getAnswerAndUserIDbyID = require('./getAnswerAndUserIDbyID.js');
-
-exports.getScoreByUserID = require('./getScoreByUserID.js');
+exports.isLeader = require('./isLeader.js');

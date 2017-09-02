@@ -4,27 +4,27 @@ const view_module = require('../bin/view_module');
 const personalinformation_module = require('../bin/personalinformation_module');
 
 function init(app,directory){
-    app.get('/questionDetail', function(req, res){
-        req.session.questionID = req.query.ID;
-        let questionID = getQuestionID();
+    app.get('/myTeam', function(req, res){
+        let userID = getUserID();
 
-        if(questionID){
-            res.sendFile('questionDetail.html');
-        }else{
-            res.redirect('/personalHomePage');
-        }
+        view_module.isLeader(userID,function(result){
+            if(result){
+                res.sendFile(directory + "/views/myTeamForLeader.html");
+            }else{
+                res.sendFile(directory + "/views/myTeamForMember.html");
+            }
+        });
 
 
-        function getQuestionID(){
-            return req.session.questionID;
+        function getUserID(){
+            return req.session.ID;
         }
     });
 
-    app.get('/questionDetail/getQuestionDetail', function(req, res){
+    app.get('/myTeam/getQuestionDetail', function(req, res){
         let dataToSended = {};
 
-        let questionID = getQuestionID();
-        let authorID;
+        let teamID;
         let userID = getUserID();
 
         if(!questionID){
@@ -39,22 +39,18 @@ function init(app,directory){
 
             authorID = result.authorID;
 
-            personalinformation_module.getUsernameByID(authorID,function(result){
-                dataToSended.author_name = result;
+            dataToSended.author_name = result;
 
-                view_module.getScoreByUserID(userID,questionID,function(result){
-                    dataToSended.score = result.score;
-                    dataToSended.answer = result.answer;
+                dataToSended.score = result.score;
+                dataToSended.answer = result.answer;
 
-                    if(userID==authorID){
-                        dataToSended.isAuthor = true;
-                    }else{
-                        dataToSended.isAuthor = false;
-                    }
+                if(userID==authorID){
+                    dataToSended.isAuthor = true;
+                }else{
+                    dataToSended.isAuthor = false;
+                }
 
-                    res.send(JSON.stringify(dataToSended));
-                });
-            });
+                res.send(JSON.stringify(dataToSended));
         });
 
 

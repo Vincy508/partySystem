@@ -1,3 +1,3 @@
-exports.answerAskQuestion = require('./answerAskQuestion.js');
+exports.joinTeam = require('./joinTeam.js');
 
 exports.setScoreByID = require('./setScoreByID.js');

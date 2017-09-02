@@ -9,7 +9,7 @@ function addItemToTeamList(){
             teamList = JSON.parse(this.responseText);
 
             for(let i=0;i < teamList.length;i++){
-                teamTable.innerHTML += '<tr><td><a href="ID=' + teamList[i].ID + '">' + teamList[i].title + '</a></td></tr>';
+                teamTable.innerHTML += '<tr><td><a href="/teamDetail?ID=' + teamList[i].ID + '">' + teamList[i].title + '</a></td></tr>';
             }
         }
     }

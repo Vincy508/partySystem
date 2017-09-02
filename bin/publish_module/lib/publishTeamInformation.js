@@ -31,7 +31,21 @@ function publishTeamInformation(title,description,leaderID,callback){
                 'INSERT INTO TeamList (ID,title,description,leaderName,leaderQQ,leaderID) VALUE (null,?,?,?,?,?)',
                 [title,description,result.RealName,result.QQ,leaderID]);
 
-            saferman.sql(sql,executeCallback);
+            saferman.sql(sql,function(){
+                let sql = saferman.format(
+                    'SELECT ID FROM TeamList WHERE title=?',
+                    [title]);
+
+                saferman.sql(sql,function(result){
+                    saferman.sql(sql,function(){
+                        let sql = saferman.format(
+                            'UPDATE PersonalInformation SET teamID=? WHERE ID=?',
+                            [result[0].ID,leaderID]);
+
+                        saferman.sql(sql,executeCallback);
+                    });
+                });
+            });
         });
     };
 

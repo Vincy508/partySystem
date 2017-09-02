@@ -50,6 +50,8 @@ function initRoutes(app,directory){
     require('./signPage')(app,directory);
     require('./myInformation')(app,directory);
     require('./teamList')(app,directory);
+    require('./teamDetail')(app,directory);
+    require('./myTeam')(app,directory);
     require('./publishTeam')(app,directory);
     require('./jumpPage')(app,directory);
 }

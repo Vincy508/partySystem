@@ -20,7 +20,8 @@ CREATE TABLE PersonalInformation(
      ID INT AUTO_INCREMENT primary key,
      Name VARCHAR(20),
      RealName VARCHAR(20),
-     QQ INT
+     QQ INT,
+     teamID INT
    );
 
 CREATE TABLE ShadowTable(
@@ -37,10 +38,10 @@ CREATE TABLE TeamList(
      leaderID INT
    );
 
-CREATE TABLE MemberList(
+CREATE TABLE ApplicationList(
      ID INT AUTO_INCREMENT primary key,
-     teamID INT not null,
-     userID INT not null,
-     Username VARCHAR(20)
+     teamID INT,
+     userID INT,
+     Name VARCHAR(20)
    );
 eof
