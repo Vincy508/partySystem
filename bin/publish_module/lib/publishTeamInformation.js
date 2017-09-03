@@ -27,6 +27,7 @@ function publishTeamInformation(title,description,leaderID,callback){
 
     function titleNotDuplicate(){
         personalinformation_module.getInformation(leaderID,function(result){
+            console.log(result)
             let sql = saferman.format(
                 'INSERT INTO TeamList (ID,title,description,leaderName,leaderQQ,leaderID) VALUE (null,?,?,?,?,?)',
                 [title,description,result.RealName,result.QQ,leaderID]);

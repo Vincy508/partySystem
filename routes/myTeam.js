@@ -21,47 +21,57 @@ function init(app,directory){
         }
     });
 
-    app.get('/myTeam/getQuestionDetail', function(req, res){
+    app.get('/myTeam/getTeamInformation', function(req, res){
         let dataToSended = {};
 
         let teamID;
         let userID = getUserID();
 
-        if(!questionID){
-            res.redirect('/personalHomePage');
-            return;
-        }
+        view_module.getTeamOfUser(userID,function(result){
+            if(result){
+                teamID = result;
+                view_module.getTeamDetail(teamID,function(result){
+                    dataToSended.title = result.title;
+                    dataToSended.description = result.description;
+                    dataToSended.leaderName = result.leaderName;
+                    dataToSended.leaderQQ = result.leaderQQ;
 
-        view_module.getQuestionDetail(questionID,function(result){
-            dataToSended.title = result.title;
-            dataToSended.description = result.description;
-            dataToSended.total_score = result.total_score;
+                    view_module.getMember(teamID,function(result){
+                        dataToSended.member = result;
 
-            authorID = result.authorID;
-
-            dataToSended.author_name = result;
-
-                dataToSended.score = result.score;
-                dataToSended.answer = result.answer;
-
-                if(userID==authorID){
-                    dataToSended.isAuthor = true;
-                }else{
-                    dataToSended.isAuthor = false;
-                }
-
+                        res.send(JSON.stringify(dataToSended));
+                    });
+                });
+            }else{
+                dataToSended.noTeam = true;
                 res.send(JSON.stringify(dataToSended));
+            }
         });
-
 
         function getUserID(){
             return req.session.ID;
         }
-
-        function getQuestionID(){
-            return req.session.questionID;
-        }
     });
 
+    app.get('/myTeam/getApplication', function(req, res){
+        let dataToSended = {};
+
+        let teamID;
+        let userID = getUserID();
+
+        view_module.getTeamOfUser(userID,function(result){
+            if(result){
+                teamID = result;
+                view_module.getApplication(teamID,function(result){
+                    dataToSended.application = result;
+                    res.send(JSON.stringify(dataToSended));
+                });
+            }
+        });
+
+        function getUserID(){
+            return req.session.ID;
+        }
+    });
 }
 

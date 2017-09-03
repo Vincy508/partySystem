@@ -1,9 +1,9 @@
-module.exports = joinTeam;
+module.exports = refuse;
 
 const saferman = require('saferman');
 const personalinformation_module = require('../../personalinformation_module');
 
-function joinTeam(userID,teamID,callback){
+function refuse(userID,teamID,callback){
 
     var sql = saferman.format('SELECT ID FROM ApplicationList WHERE userID=? AND teamID=?',
         [userID,teamID]);

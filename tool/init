@@ -42,6 +42,7 @@ CREATE TABLE ApplicationList(
      ID INT AUTO_INCREMENT primary key,
      teamID INT,
      userID INT,
-     Name VARCHAR(20)
+     Name VARCHAR(20),
+     QQ INT
    );
 eof

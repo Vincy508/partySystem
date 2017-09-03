@@ -1,40 +1,61 @@
-function hidden(){
-    var viewAnswer = document.getElementById('viewAnswer');
-    viewAnswer.style.display="none";
-}
-
-function displayViewAnswer(){
-    viewAnswer.style.display="inline-block";
-}
-
-hidden();
-
-function getQuestionDetail(){
+function getTeamDetail(){
     var title = document.getElementById('title');
     var description = document.getElementById('description');
     var leaderName = document.getElementById('leaderName');
     var leaderQQ = document.getElementById('leaderQQ');
+
+    var teamTable = document.getElementById('teamTable');
 
     var xhttp = new XMLHttpRequest();
 
     xhttp.onreadystatechange = function(){
         if(this.readyState == 4 && this.status == 200){
             var data = JSON.parse(this.responseText);
-            console.log(data);
 
-            total_score.innerHTML = data.total_score;
-            your_score.innerHTML = data.score;
             title.innerHTML = data.title;
             description.innerHTML = data.description;
-            answer.innerHTML = data.answer;
-            publish_man.innerHTML = data.author_name;
+            leaderName.innerHTML = data.leaderName;
+            leaderQQ.innerHTML = data.leaderQQ;
 
-            if(data.isAuthor) displayViewAnswer();
+            for(let i=0;i<data.member.length;i++){
+                teamTable.innerHTML = teamTable.innerHTML + '<tr><td>队员 '+ (i+1) +'</td><td>' + data.member[i].RealName + '</td></tr>';
+            }
         }
     }
 
-    xhttp.open('GET','/questionDetail/getQuestionDetail',true);
+    xhttp.open('GET','/myTeam/getTeamInformation',true);
     xhttp.send();
 }
 
-getQuestionDetail();
+getTeamDetail();
+
+function getApplication(){
+    var application = document.getElementById('application');
+
+    var xhttp = new XMLHttpRequest();
+
+    xhttp.onreadystatechange = function(){
+        if(this.readyState == 4 && this.status == 200){
+            var data = JSON.parse(this.responseText);
+
+            for(let i=0;i<data.application.length;i++){
+                application.innerHTML = application.innerHTML + '<tr><td>'+ data.application[i].Name +'</td>' +
+                    '<td>'+ data.application[i].QQ +'</td>\
+                    <td>\
+                    <a class="click href="">\
+                      <img src="picture/agree.png">\
+                    </a>\
+                    <a class="click href="">\
+                    <img src="picture/refuse.png">\
+                    </a>\
+                    </td>\
+                    </tr>';
+            }
+        }
+    }
+
+    xhttp.open('GET','/myTeam/getApplication',true);
+    xhttp.send();
+}
+
+getApplication();

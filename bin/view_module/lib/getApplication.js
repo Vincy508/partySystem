@@ -1,14 +1,15 @@
-module.exports = getAnswerAndUserIDbyID;
+module.exports = getApplication;
 
 const saferman = require('saferman');
 
-function getAnswerAndUserIDbyID(ID,callback){
+function getApplication(teamID,callback){
 
-    let sql = 'SELECT answer,userID,questionID,score FROM AnswerTable WHERE ID=' + ID;
+    let sql = 'SELECT userID,Name,QQ FROM ApplicationList WHERE teamID=' + teamID;
 
     saferman.sql(sql,function(results){
-        executeCallback(results[0]);
+        executeCallback(results);
     });
+
 
 
     function executeCallback(argumentOfCallback){
