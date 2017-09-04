@@ -1,11 +1,11 @@
-module.exports = refuse;
+module.exports = agree;
 
 const saferman = require('saferman');
 
-function refuse(userID,teamID,callback){
+function agree(userID,teamID,callback){
 
-    var sql = saferman.format('DELETE FROM ApplicationList WHERE userID=? AND teamID=?',
-        [userID,teamID]);
+    var sql = saferman.format('UPDATE PersonalInformation SET teamID=? WHERE ID=?',
+        [teamID,userID]);
 
     saferman.sql(sql,function(){
         executeCallback();

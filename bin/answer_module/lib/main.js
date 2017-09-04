@@ -1,3 +1,5 @@
 exports.joinTeam = require('./joinTeam.js');
 
-exports.setScoreByID = require('./setScoreByID.js');
+exports.refuse = require('./refuse.js');
+
+exports.agree = require('./agree.js');

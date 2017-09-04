@@ -1,7 +1,7 @@
 module.exports = init;
 
 const view_module = require('../bin/view_module');
-const personalinformation_module = require('../bin/personalinformation_module');
+const answer_module = require('../bin/answer_module');
 
 function init(app,directory){
     app.get('/myTeam', function(req, res){
@@ -30,6 +30,8 @@ function init(app,directory){
         view_module.getTeamOfUser(userID,function(result){
             if(result){
                 teamID = result;
+                setTeamID();
+
                 view_module.getTeamDetail(teamID,function(result){
                     dataToSended.title = result.title;
                     dataToSended.description = result.description;
@@ -47,6 +49,10 @@ function init(app,directory){
                 res.send(JSON.stringify(dataToSended));
             }
         });
+
+        function setTeamID(){
+            req.session.teamID = teamID;
+        }
 
         function getUserID(){
             return req.session.ID;
@@ -71,6 +77,44 @@ function init(app,directory){
 
         function getUserID(){
             return req.session.ID;
+        }
+    });
+
+    app.get('/myTeam/refuse', function(req, res){
+        let dataToSended = {};
+
+        let teamID = getTeamID();
+        let userID = getUserID();
+
+        answer_module.refuse(userID,teamID,function(){
+            res.redirect('/signInSuccess');
+        });
+
+        function getTeamID(){
+            return req.session.teamID;
+        }
+
+        function getUserID(){
+            return req.query.ID;
+        }
+    });
+
+    app.get('/myTeam/agree', function(req, res){
+        let dataToSended = {};
+
+        let teamID = getTeamID();
+        let userID = getUserID();
+
+        answer_module.agree(userID,teamID,function(){
+            res.redirect('/signInSuccess');
+        });
+
+        function getTeamID(){
+            return req.session.teamID;
+        }
+
+        function getUserID(){
+            return req.query.ID;
         }
     });
 }

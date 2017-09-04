@@ -42,11 +42,13 @@ function getApplication(){
                 application.innerHTML = application.innerHTML + '<tr><td>'+ data.application[i].Name +'</td>' +
                     '<td>'+ data.application[i].QQ +'</td>\
                     <td>\
-                    <a class="click href="">\
-                      <img src="picture/agree.png">\
+                    <a class="click" href="/myTeam/agree?ID='
+                    + data.application[i].userID + '">' +
+                    '<img src="picture/agree.png">\
                     </a>\
-                    <a class="click href="">\
-                    <img src="picture/refuse.png">\
+                    <a class="click" href="/myTeam/refuse?ID='
+                    + data.application[i].userID + '">' +
+                    '<img src="picture/refuse.png">\
                     </a>\
                     </td>\
                     </tr>';
